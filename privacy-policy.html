@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Weekly Meal Planner</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, serif;
+      background: #f5f0e8;
+      color: #2c2c2c;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      line-height: 1.75;
+    }
+    h1 { font-size: 2rem; color: #1a1a1a; margin-bottom: 6px; }
+    .meta { font-size: 13px; color: #888; margin-bottom: 40px; font-family: Arial, sans-serif; }
+    h2 {
+      font-size: 1.2rem;
+      color: #2e86ab;
+      margin-top: 36px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      border-left: 4px solid #2e86ab;
+      padding-left: 12px;
+    }
+    h3 { font-size: 1rem; font-family: Arial, sans-serif; margin-top: 20px; margin-bottom: 6px; color: #1a1a1a; }
+    p { margin-bottom: 14px; font-size: 15px; }
+    ul { margin: 10px 0 14px 20px; }
+    ul li { margin-bottom: 8px; font-size: 15px; }
+    a { color: #2e86ab; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; font-family: Arial, sans-serif; }
+    th, td { border: 1px solid #ddd; padding: 9px 11px; text-align: left; vertical-align: top; }
+    th { background: #eee8dd; font-weight: 700; }
+    .highlight {
+      background: #e8f5e9;
+      border: 1px solid #a8dadc;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 12px;
+      color: #aaa;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Weekly Meal Planner &nbsp;·&nbsp; Effective date: July 31, 2026 &nbsp;·&nbsp; Last updated: July 31, 2026</p>
+
+  <div class="highlight">
+    <strong>The short version:</strong> There is no account, so we do not know who you are. Your pantry, meal plans, and saved recipes stay on your device. Two things leave your phone: receipt photos and ingredient lists, which are sent to AI services so the app can read your receipt and write your recipes. Neither is stored on our systems, and nothing is ever sold or used for advertising.
+  </div>
+
+  <h2>1. Who We Are</h2>
+  <p>Weekly Meal Planner is an independent mobile application developed by mmccanse. Questions about this policy can be sent to <a href="mailto:mmccanse@yahoo.com">mmccanse@yahoo.com</a>.</p>
+  <p>The app has no user accounts, no sign-up, and no login. We have no way to identify you, contact you, or link your activity across sessions or devices.</p>
+
+  <h2>2. What Leaves Your Device</h2>
+  <p>Here is everything the app transmits, with no omissions.</p>
+
+  <h3>Receipt photos</h3>
+  <p>When you photograph or upload a grocery receipt, the image is sent to Anthropic's Claude AI to extract the ingredient names printed on it. The image passes through our relay server (see section 4) and is not retained by us at any point. Anthropic's handling of this data is governed by <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>. We do not send, and Claude is not asked to extract, the store name, payment method, card digits, or any other information on the receipt beyond food items.</p>
+
+  <h3>Ingredient lists</h3>
+  <p>When you generate a meal plan, your pantry ingredients and selected preferences (diet type, meal types, cuisines, health toggles) are sent to Anthropic's Claude AI to generate recipes. No name, email, device identifier, or other identifying information is attached to this request. We do not retain the list.</p>
+
+  <h3>Dish and ingredient names, for photography</h3>
+  <p>To illustrate recipes and pantry items, the app sends dish names (for example, "lemon herb salmon") and ingredient names (for example, "cauliflower") to image services. These are food words only — they carry no personal information. Sources are tried in order: TheMealDB's free recipe and ingredient photos, then AI image generation via Google's Imagen model, then Open Food Facts.</p>
+
+  <h3>Barcode numbers</h3>
+  <p>When you scan a product barcode, the barcode number alone is sent to <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, a free open-source food database, to look up the product name and image. No identifying information is attached.</p>
+
+  <h2>3. What Stays On Your Device</h2>
+  <p>The following never leaves your phone. It is written to your device's standard app storage and is readable only by this app:</p>
+  <ul>
+    <li>Your pantry contents and quantities</li>
+    <li>Generated meal plans and weekly menus</li>
+    <li>Saved recipes and saved menus</li>
+    <li>Your diet type, meal preferences, and health toggles</li>
+    <li>Downloaded recipe and ingredient photos</li>
+    <li>Meal history used to vary future weeks</li>
+  </ul>
+  <p>This storage is not encrypted beyond the protections your operating system applies to app data generally. Anyone with unlocked physical access to your device may be able to read it. We recommend using a device passcode.</p>
+
+  <h2>4. Our Server</h2>
+  <p>The app does not call AI providers directly. Requests are routed through a relay server we operate on Cloudflare Workers. This exists so that API credentials stay on the server instead of being embedded in the app, which is a security requirement, not a data-collection mechanism.</p>
+  <p>What the relay does and does not do:</p>
+  <ul>
+    <li>It <strong>forwards</strong> receipt images and ingredient lists to Anthropic and image requests to Google, then returns the response to your phone.</li>
+    <li>It <strong>does not store</strong> receipt images, ingredient lists, recipes, or any user content.</li>
+    <li>It <strong>does not log</strong> request bodies or associate requests with individuals. There is no user database.</li>
+    <li>It <strong>does cache generated food images</strong> keyed by the dish name, so that a common dish does not need regenerating for every user. This cache contains food photographs and food words only. It contains no personal data, and entries expire automatically.</li>
+  </ul>
+  <p>Cloudflare processes this traffic as our infrastructure provider under its <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a>. Standard network-level logs (such as IP addresses) may be generated by Cloudflare as part of operating the service; we do not access them to identify users.</p>
+
+  <h2>5. What We Do Not Collect</h2>
+  <ul>
+    <li>No account registration or login — we do not know who you are</li>
+    <li>No name, email address, or contact information</li>
+    <li>No location data</li>
+    <li>No device identifiers or advertising IDs</li>
+    <li>No analytics, telemetry, crash reporting, or usage tracking</li>
+    <li>No contacts, calendar, microphone, or audio access</li>
+    <li>No data sold, rented, or shared with advertisers or data brokers, ever</li>
+  </ul>
+
+  <h2>6. Device Permissions</h2>
+  <table>
+    <tr><th>Permission</th><th>Why the app asks</th></tr>
+    <tr><td>Camera</td><td>To photograph grocery receipts and scan product barcodes. Images are used only for that purpose.</td></tr>
+    <tr><td>Photos / storage</td><td>To let you select an existing receipt photo from your library. The app reads only the image you pick.</td></tr>
+    <tr><td>Notifications (optional)</td><td>To send you a reminder to plan next week's meals. Reminders are scheduled and delivered locally on your device — no reminder data is sent anywhere. You can decline this and the app works normally.</td></tr>
+  </table>
+
+  <h2>7. Third-Party Services</h2>
+  <p>The app relies on the following services. Each has its own privacy policy:</p>
+  <table>
+    <tr><th>Service</th><th>Used for</th><th>Policy</th></tr>
+    <tr><td>Anthropic (Claude)</td><td>Reading receipts, generating recipes</td><td><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Privacy Policy</a></td></tr>
+    <tr><td>Google (Imagen)</td><td>Generating food photography</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></td></tr>
+    <tr><td>Cloudflare</td><td>Relay server and image cache</td><td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a></td></tr>
+    <tr><td>TheMealDB</td><td>Recipe and ingredient photos</td><td><a href="https://www.themealdb.com" target="_blank" rel="noopener">Website</a></td></tr>
+    <tr><td>Open Food Facts</td><td>Barcode product lookup</td><td><a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">Privacy Policy</a></td></tr>
+    <tr><td>Google Play Billing</td><td>Processing subscriptions</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></td></tr>
+  </table>
+
+  <h2>8. Subscriptions</h2>
+  <p>Weekly Meal Planner offers an optional paid subscription. Payment is handled entirely by Google Play Billing — we never see or receive your payment card, billing address, or Google account details. Your subscription status is tied to your Google Play identity, not to any account with us, which is why no sign-up is required.</p>
+
+  <h2>9. Data Retention and Deletion</h2>
+  <p>We do not hold your data, so there is nothing for us to retain or delete on your behalf. Everything the app stores lives on your device and is under your control at all times. You can:</p>
+  <ul>
+    <li>Delete individual pantry items, recipes, and menus inside the app</li>
+    <li>Clear all app data through your device's app settings</li>
+    <li>Uninstall the app, which removes all of it permanently</li>
+  </ul>
+  <p>Data already transmitted to Anthropic or Google is subject to those providers' own retention policies, linked above.</p>
+
+  <h2>10. Children's Privacy</h2>
+  <p>This app is not directed at children under 13 and we do not knowingly collect personal information from children. Because the app collects no personal information from anyone, there is no children's data for us to hold. If you believe a child has provided information through the app, contact us and we will address it promptly.</p>
+
+  <h2>11. Your Rights</h2>
+  <p>Privacy laws including the GDPR (European Union), the UK GDPR, and the CCPA/CPRA (California) give you rights to access, correct, delete, and port your personal data, and to opt out of its sale.</p>
+  <p>Because the app requires no account and we store no personal data on our systems, we hold nothing to disclose, correct, or delete — and we have never sold or shared personal information, so there is nothing to opt out of. You already have direct and complete access to all of your data on your own device. If you have questions about this, contact us at <a href="mailto:mmccanse@yahoo.com">mmccanse@yahoo.com</a> and we will respond within 30 days.</p>
+
+  <h2>12. Changes to This Policy</h2>
+  <p>If we make material changes, we will update the effective date above and, where the change is significant, note it in the app's release notes. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>13. Contact</h2>
+  <p>Questions, concerns, or requests regarding this privacy policy:<br />
+  <a href="mailto:mmccanse@yahoo.com">mmccanse@yahoo.com</a></p>
+
+  <div class="footer">
+    © 2026 Weekly Meal Planner · com.mmccanse.weeklymealplanner<br />
+    This privacy policy was last updated July 31, 2026.
+  </div>
+
+</body>
+</html>
